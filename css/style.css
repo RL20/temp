@@ -52,7 +52,7 @@ body {
 .tools-fram-clicked {
   background-color: blue;
 }
-.stor-last-block {
+#stor-last-block {
   width: 25%;
   height: 5vmin;
   border: white solid 1px;
@@ -84,4 +84,8 @@ body {
 .leaves {
   border: 0.5px, black, solid;
   background-color: rgb(14, 88, 30);
+}
+.test {
+  border: 0.5px, black, solid;
+  background-color: pink;
 }
