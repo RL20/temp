@@ -53,6 +53,10 @@ body {
   background-color: blue;
   border: none;
 }
+.tools-fram-clicked-wrong {
+  background-color: red;
+  border: none;
+}
 #stor-last-block {
   width: 25%;
   height: 5vmin;
