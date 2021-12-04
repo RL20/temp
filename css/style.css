@@ -63,28 +63,38 @@ body {
 }
 .sky {
   background-color: transparent;
-  border: 0.5px solid #f1f1f1;
+  /* border: 0.5px solid #f1f1f1; */
 }
 .dirt {
-  border: 0.5px black solid;
-  background-color: rgb(102, 72, 16);
+  /* border: 0.5px black solid; */
+  /* background-color: rgb(102, 72, 16); */
+  background-image: url("/imeges/Textures/Dirt.png");
 }
 .gress {
-  border: 0.5px black solid;
-  background-color: greenyellow;
+  /* border: 0.5px black solid; */
+  /* background-color: greenyellow; */
+  background-image: url("/imeges/Textures/GrassBlock.png");
 }
 .rock {
-  border: 0.5px black solid;
-  background-color: gray;
+  /* border: 0.5px black solid; */
+  /* background-color: gray; */
+  background-image: url("/imeges/Textures/Stone.png");
 }
 .trunk {
-  border: 0.5px black solid;
-  background-color: rgb(75, 51, 8);
+  /* border: 0.5px black solid; */
+  /* background-color: rgb(75, 51, 8); */
+  background-image: url("/imeges/Textures/Wood.png");
 }
+
 .leaves {
+  /* border: 0.5px, black, solid; */
+  /* background-color: rgb(14, 88, 30); */
+  background-image: url("/imeges/Textures/Leaves.png");
+}
+/* .leaves {
   border: 0.5px, black, solid;
   background-color: rgb(14, 88, 30);
-}
+} */
 .test {
   border: 0.5px, black, solid;
   background-color: pink;

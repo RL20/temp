@@ -1,4 +1,4 @@
-import { update as updateSnake, draw as drawSnake } from "./snake.js";
+import { update as updateSnake, draw as drawSnake, axe as a, pickaxe as p, shovel as s } from "./snake.js";
 let lastRenderTime = 0;
 const gameBoard = document.querySelector("#game-board");
 
@@ -17,6 +17,9 @@ function update() {
 function draw() {
   drawSnake(gameBoard);
 }
+let axe = a;
+let pickaxe = p;
+let shovel = s;
 //code for tools
 let btns = document.querySelectorAll(".tools-fram");
 let PickaxeBtn = btns[0];
@@ -27,16 +30,21 @@ PickaxeBtn.addEventListener("click", (e) => {
   isContainsRemove(axeBtn, "tools-fram-clicked");
   isContainsRemove(ShovelBtn, "tools-fram-clicked");
   PickaxeBtn.classList.toggle("tools-fram-clicked");
+  pickaxe = !pickaxe;
 });
+
 axeBtn.addEventListener("click", (e) => {
   isContainsRemove(PickaxeBtn, "tools-fram-clicked");
   isContainsRemove(ShovelBtn, "tools-fram-clicked");
   axeBtn.classList.toggle("tools-fram-clicked");
+  axe = !axe;
+  console.log(axe);
 });
 ShovelBtn.addEventListener("click", (e) => {
   isContainsRemove(axeBtn, "tools-fram-clicked");
   isContainsRemove(PickaxeBtn, "tools-fram-clicked");
   ShovelBtn.classList.toggle("tools-fram-clicked");
+  shovel = !shovel;
 });
 function isContainsRemove(btn, cssClass) {
   if (btn.classList.contains(cssClass)) btn.classList.toggle(cssClass);

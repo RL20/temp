@@ -38,39 +38,68 @@ for (let i = 1; i <= 20; i++) {
     grid.push({ x: i, y: j, blockClass: blocksToClass[mtrx[j - 1]], elementHtml: "" });
   }
 }
+var build = false; //the stat when click on block if true click on block ass class
+var classToPush = ""; //block kept befor to build somting new
 let lastBlockStorage = "";
 let divStorLastBlock = document.querySelector("#stor-last-block");
+export let axe = false;
+export let pickaxe = true;
+export let shovel = false;
+
+// event listner
+divStorLastBlock.addEventListener("click", (e) => {
+  build = true;
+  classToPush = e.target.className;
+});
 export function update() {}
 
 export function draw(gameBoard) {
   gameBoard.innerHTML = "";
   grid.forEach((row) => {
-    // gameBoard.innerHTML = "";
-    // console.log(row);
-    // console.log(row.blockClass);
     const blockElement = document.createElement("div");
 
-    // row.elementHtml = blockElement;
-    blockElement.classList.add(row.blockClass);
+    blockElement.classList.add(row.blockClass); //draw the start from matrix
     blockElement.addEventListener("click", (e) => {
-      lastBlockStorage = e.target.className;
-      divStorLastBlock.classList.add(lastBlockStorage);
-      e.target.className = "";
-      e.target.classList.add("sky");
-
-      // e.target.style.backgroundColor = "pink";
+      let curBlockClass = e.target.className;
+      if (!build) {
+        if (axe) {
+          if (curBlockClass === "leaves" || curBlockClass === "trunk") {
+            lastBlockStorage = curBlockClass;
+            divStorLastBlock.className = "";
+            divStorLastBlock.classList.add(lastBlockStorage);
+            e.target.className = "";
+            e.target.classList.add("sky");
+          } else return;
+        }
+        if (pickaxe) {
+          if (curBlockClass === "rock") {
+            lastBlockStorage = curBlockClass;
+            divStorLastBlock.className = "";
+            divStorLastBlock.classList.add(lastBlockStorage);
+            e.target.className = "";
+            e.target.classList.add("sky");
+          } else return;
+        }
+        if (shovel) {
+          if (curBlockClass === "dirt") {
+            lastBlockStorage = curBlockClass;
+            divStorLastBlock.className = "";
+            divStorLastBlock.classList.add(lastBlockStorage);
+            e.target.className = "";
+            e.target.classList.add("sky");
+          } else return;
+        }
+        // lastBlockStorage = e.target.className;
+        // divStorLastBlock.className = "";
+        // divStorLastBlock.classList.add(lastBlockStorage);
+        // e.target.className = "";
+        // e.target.classList.add("sky");
+      } else {
+        e.target.className = "";
+        e.target.classList.add(lastBlockStorage);
+        build = false;
+      }
     });
     gameBoard.append(blockElement);
   });
 }
-
-// export function draw(gameBoard) {
-//   gameBoard.innerHTML = "";
-//   grid.forEach((segment) => {
-//     const snakeElement = document.createElement("div");
-//     snakeElement.style.gridRowStart = segment.x;
-//     snakeElement.style.gridColumnStart = segment.y;
-//     snakeElement.classList.add("dirt");
-//     gameBoard.append(snakeElement);
-//   });
-// }
