@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>minecraft</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <script src="/game.js" defer type="module"></script>
-    <script src="/snake.js" defer type="module"></script>
   </head>
   <body>
-    <div class="game-board-wraper">
+    <div class="game-board-wraper none">
+      <div id="start-page">
+        <h1></h1>
+        <button data-start>Start</button>
+      </div>
       <div id="game-board"></div>
     </div>
     <div id="side-menu">
@@ -19,6 +24,7 @@
       <div class="tools-fram"><img src="/imeges/tools/Shovel.png" alt="" /></div>
 
       <div id="stor-last-block" class=""></div>
+      <button class="reset"><i class="fa fa-refresh" aria-hidden="true"></i></button>
     </div>
   </body>
 </html>

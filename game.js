@@ -1,4 +1,20 @@
+let start = document.querySelector("[data-start]");
+let landingPage = document.querySelector("#start-page");
+start.addEventListener("click", (e) => {
+  // landingPage.className = "none";
+  landingPage.classList.add("none");
+  console.log("diapear");
+});
 const gameBoard = document.querySelector("#game-board");
+const reset = document.querySelector(".reset");
+let gameBoardStart = "";
+//reset game
+reset.addEventListener("click", (e) => {
+  console.log("reset");
+  landingPage.classList.remove("none");
+  draw(gameBoard);
+  divStorLastBlock.className = "";
+});
 const blocksToClass = {
   1: "transparent",
   0: "sky",
